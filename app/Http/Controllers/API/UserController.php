@@ -69,10 +69,10 @@ class UserController extends Controller
         $user = Auth::user(); 
         return response()->json(['success' => $user], $this-> successStatus); 
     }
-    public function searchVehicle($vehicle){
+    public function searchVehicle($brand, $model){
  
         
-        $result = $this->vehicle->searchVehicle($vehicle);
+        $result = $this->vehicle->searchVehicle($brand, $model);
         if (!$result) {
             throw new NotFoundHttpException();
         }

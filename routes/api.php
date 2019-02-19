@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
-    Route::get('search_vehicle/{vehicle}/', 'API\UserController@searchVehicle');
+    Route::get('search_vehicle/{brand}/{model}', 'API\UserController@searchVehicle');
     Route::get('vehicle_details', 'API\UserController@vehicleDetails');
     Route::get('account_details', 'API\UserController@accountDetails');
 });
